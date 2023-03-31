@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= Home
+  if name
+    p Welcome, #{name}!
+    a(href = '/log-out') Log out
+  else 
+    h1= Log in 
+    form(action='/log-in', method='post') 
+        p 
+            label(for='name') Enter your name: 
+            input(type='text', name='name', id='name') 
+        p 
+            label(for='password') Enter your password: 
+            input(type='password', name='password', id='password') 
+        p 
+            input(type='submit', value='log_in')
